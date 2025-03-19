@@ -14,13 +14,17 @@ app.use(cors());
 // Serve static files from the "public" folder
 app.use(express.static('public'));
 
+// Extract connection details from the provided MySQL connection string
+const dbConfig = {
+    host: 'switchback.proxy.rlwy.net', // Hostname
+    user: 'root',                      // Username
+    password: 'eLStFhLQKexJgQDaAWVKWuWhYwMKtHCj', // Password
+    port: 10952,                       // Port
+    database: 'railway'                // Database name
+};
+
 // Create a MySQL connection pool
-const db = mysql.createPool({
-    host: 'localhost',
-    user: 'root', 
-    password: 'pollob12', 
-    database: 'the_global_lens'
-});
+const db = mysql.createPool(dbConfig);
 
 // Test the database connection
 db.getConnection((err, connection) => {
