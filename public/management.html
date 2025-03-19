@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button.delete {
+            background-color: #ec2438;
+        }
+        .article {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Article Management</h1>
+
+    <!-- Form to Create a New Article -->
+    <h2>Create New Article</h2>
+    <form id="createArticleForm">
+        <label for="local_id">Local ID:</label>
+        <input type="number" id="local_id" name="local_id">
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category">
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author">
+
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="url">URL:</label>
+        <input type="url" id="url" name="url" required>
+
+        <label for="urlToImage">Image URL:</label>
+        <input type="url" id="urlToImage" name="urlToImage">
+
+        <label for="publishedAt">Published At:</label>
+        <input type="datetime-local" id="publishedAt" name="publishedAt" required>
+
+        <label for="content">Content:</label>
+        <textarea id="content" name="content"></textarea>
+
+        <button type="submit">Create Article</button>
+    </form>
+
+    <!-- Fetch All Articles -->
+    <h2>Fetch All Articles</h2>
+    <button id="fetchAllArticlesBtn">Fetch Articles</button>
+    <div id="articlesList"></div>
+
+    <!-- Fetch Single Article by ID -->
+    <h2>Fetch Article by ID</h2>
+    <input type="number" id="fetchArticleId" placeholder="Enter Article ID">
+    <button id="fetchArticleByIdBtn">Fetch Article</button>
+    <div id="singleArticle"></div>
+
+    <!-- Update Article -->
+    <h2>Update Article</h2>
+    <form id="updateArticleForm">
+        <label for="updateArticleId">Article ID:</label>
+        <input type="number" id="updateArticleId" name="updateArticleId" required>
+
+        <label for="updateTitle">Title:</label>
+        <input type="text" id="updateTitle" name="updateTitle" required>
+
+        <label for="updateDescription">Description:</label>
+        <textarea id="updateDescription" name="updateDescription" required></textarea>
+
+        <label for="updateUrl">URL:</label>
+        <input type="url" id="updateUrl" name="updateUrl" required>
+
+        <label for="updatePublishedAt">Published At:</label>
+        <input type="datetime-local" id="updatePublishedAt" name="updatePublishedAt" required>
+
+        <button type="submit">Update Article</button>
+    </form>
+
+    <!-- Delete Article -->
+    <h2>Delete Article</h2>
+    <input type="number" id="deleteArticleId" placeholder="Enter Article ID">
+    <button id="deleteArticleBtn" class="delete">Delete Article</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
