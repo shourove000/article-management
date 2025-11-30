@@ -16,11 +16,11 @@ app.use(express.static('public'));
 
 // Extract connection details from the provided MySQL connection string
 const dbConfig = {
-    host: 'switchback.proxy.rlwy.net', // Hostname
-    user: 'root',                      // Username
-    password: 'eLStFhLQKexJgQDaAWVKWuWhYwMKtHCj', // Password
+    host: 'sql12.freesqldatabase.com', // Hostname
+    user: 'sql12809946',                      // Username
+    password: 'pp77dcgBZD', // Password
     port: 10952,                       // Port
-    database: 'railway'                // Database name
+    database: 'sql12809946'                // Database name
 };
 
 // Create a MySQL connection pool
